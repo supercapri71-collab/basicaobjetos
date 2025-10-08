@@ -40,7 +40,7 @@ agregarCliente = function (cliente) {
      if (resultado == null) {
           clientes.push(cliente);
           alert("Cliente agregado");
-          mostrarCliente();
+          mostrarClientes();
      } else {
           alert("Ya existe el cliente con este numero de cedula " + cliente.cedula);
      }
@@ -65,10 +65,31 @@ buscarCedula = function () {
      if (cliente == null) {
           alert("Cliente no encontrado");
      } else {
-          mostrarTextoEnCaja("txtCedula",cliente.cedula);
-          mostrarTextoEnCaja("txtNombre",cliente.nombre);
-          mostrarTextoEnCaja("txtEdad",cliente.edad);
+          mostrarTextoEnCaja("txtCedula", cliente.cedula);
+          mostrarTextoEnCaja("txtNombre", cliente.nombre);
+          mostrarTextoEnCaja("txtEdad", cliente.edad);
 
      }
+}
+guardaCambios = function () {
+     let valorCedula = recuperarTexto("txtCedula");
+     let valorNombre = recuperarTexto("txtNombre");
+     let valorEdad = recuperarInt("txtEdad");
 
+     let nuevoCliente = {};
+     nuevoCliente.cedula = valorCedula;
+     nuevoCliente.nombre = valorNombre;
+     nuevoCliente.edad = valorEdad;
+
+
+     modifcaCliente(nuevoCliente);
+     mostrarClientes();
+}
+
+modifcaCliente = function (cliente) {
+     let clienteE = buscarCliente(cliente.cedula);
+     if (clienteE != null) {
+          clienteE.nombre = cliente.nombre;
+          clienteE.edad = cliente.edad;
+     }
 }
