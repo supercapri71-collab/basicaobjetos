@@ -13,38 +13,29 @@
 
 
     </div>
+
     <div class="ingresoDatos">
         <h2> 1. Cedula : </h2>
         <input type="text" id="txtCedula" />
-        <h2> 2.Nombre  : </h2>
+        <h2> 2.Nombre : </h2>
         <input type="text" id="txtNombre" />
         <h2> 3. Edad : </h2>
-        <input  type="text" id="txtEdad" />
+        <input type="text" id="txtEdad" />
 
     </div>
 
     <div class="tituloCampo">
+        <h2> Cedula para buscar : </h2>
+        <input type="text" id="txtCedula1" />
+    </div>
+    <div class="tituloCampo">
+        <input class="estiloBoton" type="button" value="MOSTRAR" onclick="mostrarClientes();" />
+        <input class="estiloBoton" type="button" value="AGREGAR" onclick="crearCliente()" />
+        <input class="estiloBoton" type="button" value="BUSCAR" onclick="buscarCedula()" />
+    </div>
+    </div>
 
-        <div class="tituloCampo">
-            <input class="estiloBoton" type="button" value="MOSTRAR" onclick="mostrarClientes();" />
-            <input class="estiloBoton" type="button" value="AGREGAR" onclick="crearCliente()" />
-        </div>
-    </div>
-    </div>
-    <div class="contenidoResultado">
-        <h2>Numero Aleatorio entre 1 y 100</h2>
-        <h2 id="emimi">0</h2>
-        <table>
-            <tr>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-            </tr>
-        </table>
+
 </body>
 
 </html>
